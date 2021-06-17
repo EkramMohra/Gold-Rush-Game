@@ -1,0 +1,8 @@
+Matrix.js - a file to hold your base Matrix data structure
+Feel free to use a class you’ve already written in the past
+GoldRush.js - here you’ll create your new matrix, it should extend from Matrix
+Renderer.js - this will have your Renderer class with at least one method: renderBoard
+The renderBoard method should receive a matrix, and display it on the screen
+main.js - your controller file: this will load the initial game and react to user input
+
+//player 1  WASD keys,Player 2  IJKL keys.
