@@ -6,10 +6,37 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+    <div id="title">Gold Rush</div>
+
+    <div id="score"></div>
+
+
+    <script id="score-template" type="text/x-handlebars-template">
+        {{#each score}}
+
+        <div class="PlayerScore">Player {{@key}} Scores: {{this}} </div>
+
+
+        {{/each}}
+    </script>
+
+    <div id="matrix"></div>
+
+    <script id="matrix-template" type="text/x-handlebars-template">
+        {{#each matrix}} {{#each this}}
+        <div class="cell player{{ this }}"> <label class="text-value">{{ this }}</label> </div>
+
+        {{/each}} {{/each}}
+
+    </script>
+    <div class="info">Player 1 can move with [awsd] keys</div>
+    <div class="info">Player 2 can move with [ikjl] keys</div>
     <script src="https://code.jquery.com/jquery-3.6.0.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
     <script src="Matrix.js"></script>
     <script src="GoldRush.js"></script>
     <script src="Renderer.js"></script>

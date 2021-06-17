@@ -1,0 +1,52 @@
+#matrix {
+    width: 50%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    background-color: papayawhip;
+    color: papayawhip;
+    margin: auto
+}
+
+.info {
+    color: red;
+    font-size: 18px;
+}
+
+.cell {
+    font-size: 22px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border: 1px #3a3939 solid;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.playerc {
+    color: red;
+    background-color: #f6b576;
+}
+
+.player1 {
+    color: black;
+    background-color: #76c9cb;
+}
+
+.player2 {
+    color: black;
+    background-color: #dcd36a;
+}
+
+#title {
+    font-size: 30px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.PlayerScore {
+    font-size: 18px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: center;
+    margin-bottom: 10px;
+}

@@ -78,7 +78,7 @@ class GoldRush extends Matrix {
             }
         }
     }
-    woner() {
+ /*    woner() {
         if (this.coinsCount == 0) {
             if (this.scores[1] > this.scores[2]) {
                 console.log(`Congratulations Player 1 - ${this.scores[1]}`);
@@ -88,7 +88,7 @@ class GoldRush extends Matrix {
 
             }
         }
-    }
+    } */
     moveRight(playerNum, coordinate) {
         if (coordinate.x == (this.GoldMatrix[this.rowNum - 1].length) - 1) {
             console.log("you can't move right ");
@@ -136,7 +136,7 @@ class GoldRush extends Matrix {
 
         this.get(x, y) == 'c' ? this.scores[playerNum] = this.scores[playerNum] + 10 : null
         this.coinsCount = this.coinsCount--
-        this.woner()
+        //this.woner()
 
     }
 
