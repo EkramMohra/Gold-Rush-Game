@@ -1,59 +1,26 @@
 let goldRush = new GoldRush(5, 5)
 let render = new Renderer(goldRush)
 
-const loadData = function() {
+const loadData = function () {
     render.renderScores()
     render.renderBoard()
 }
 
 loadData()
 
-$(document).keypress(function(e) {
+$(document).keypress(function (e) {
+    const keys = {
+        119: [1, "up"],
+        97: [1, "left"],
+        115: [1, "down"],
+        100: [1, "right"],
+        105: [2, "up"],
+        106: [2, "left"],
+        107: [2, "down"],
+        108: [2, "right"]
+    }
+    const keyPressed = e.which
+    goldRush.movePlayer(...keys[keyPressed])
+    loadData()
 
-    if (e.which == 119) {
-        console.log("up")
-        goldRush.movePlayer(1, "up")
-        loadData()
-    }
-
-    if (e.which == 97) {
-        console.log("left")
-        goldRush.movePlayer(1, "left")
-        loadData()
-    }
-
-    if (e.which == 115) {
-        console.log("down")
-        goldRush.movePlayer(1, "down")
-        loadData()
-    }
-
-    if (e.which == 100) {
-        console.log("right")
-        goldRush.movePlayer(1, "right")
-        loadData()
-    }
-    if (e.which == 105) {
-        console.log("up")
-        goldRush.movePlayer(2, "up")
-        loadData()
-    }
-
-    if (e.which == 106) {
-        console.log("left")
-        goldRush.movePlayer(2, "left")
-        loadData()
-    }
-
-    if (e.which == 107) {
-        console.log("down")
-        goldRush.movePlayer(2, "down")
-        loadData()
-    }
-
-    if (e.which == 108) {
-        console.log("right")
-        goldRush.movePlayer(2, "right")
-        loadData()
-    }
 })

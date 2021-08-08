@@ -1,7 +1,7 @@
 class GoldRush extends Matrix {
     constructor(rowNum, colNum) {
         super(rowNum, colNum)
-
+            //boardMatrix
         this.GoldMatrix = this.matrix
         this.loadBoard()
         this.coin()
@@ -25,10 +25,11 @@ class GoldRush extends Matrix {
     }
 
     printScore() {
-        console.log("Player 1 score: ", this.scores[1])
-        console.log("Player 2 score: ", this.scores[2])
+            console.log("Player 1 score: ", this.scores[1])
+            console.log("Player 2 score: ", this.scores[2])
 
-    }
+        }
+        //isPlayerIn
     isNumber(y, x) {
         return this.GoldMatrix[y][x] != '.' && this.GoldMatrix[y][x] != 'c'
 
@@ -37,11 +38,11 @@ class GoldRush extends Matrix {
 
         if (coordinate.y == (this.GoldMatrix.length) - 1) {
             console.log("you can't move down ");
-
+            //return boolean
         } else {
 
             coordinate.y++
-            this.increaseScore(coordinate.y, coordinate.x, playerNum)
+                this.increaseScore(coordinate.y, coordinate.x, playerNum)
 
             if (!this.isNumber(coordinate.y, coordinate.x)) {
 
@@ -54,10 +55,9 @@ class GoldRush extends Matrix {
         if (coordinate.y == 0) {
             console.log("you can't move up ");
 
-        }
-        else {
+        } else {
             coordinate.y--
-            this.increaseScore(coordinate.y, coordinate.x, playerNum)
+                this.increaseScore(coordinate.y, coordinate.x, playerNum)
             if (!this.isNumber(coordinate.y, coordinate.x)) {
                 this.GoldMatrix[coordinate.y + 1][coordinate.x] = "."
                 this.GoldMatrix[coordinate.y][coordinate.x] = playerNum
@@ -65,37 +65,35 @@ class GoldRush extends Matrix {
         }
     }
     moveLeft(playerNum, coordinate) {
-        if (coordinate.x == 0) {
-            console.log("you can't move left");
-        }
-        else {
-
-            coordinate.x--
-            this.increaseScore(coordinate.y, coordinate.x, playerNum)
-            if (!this.isNumber(coordinate.y, coordinate.x)) {
-                this.GoldMatrix[coordinate.y][coordinate.x + 1] = "."
-                this.GoldMatrix[coordinate.y][coordinate.x] = playerNum
-            }
-        }
-    }
- /*    woner() {
-        if (this.coinsCount == 0) {
-            if (this.scores[1] > this.scores[2]) {
-                console.log(`Congratulations Player 1 - ${this.scores[1]}`);
-
+            if (coordinate.x == 0) {
+                console.log("you can't move left");
             } else {
-                console.log(`Congratulations Player 2 - ${this.scores[2]}`);
 
+                coordinate.x--
+                    this.increaseScore(coordinate.y, coordinate.x, playerNum)
+                if (!this.isNumber(coordinate.y, coordinate.x)) {
+                    this.GoldMatrix[coordinate.y][coordinate.x + 1] = "."
+                    this.GoldMatrix[coordinate.y][coordinate.x] = playerNum
+                }
             }
         }
-    } */
+        /*    woner() {
+               if (this.coinsCount == 0) {
+                   if (this.scores[1] > this.scores[2]) {
+                       console.log(`Congratulations Player 1 - ${this.scores[1]}`);
+
+                   } else {
+                       console.log(`Congratulations Player 2 - ${this.scores[2]}`);
+
+                   }
+               }
+           } */
     moveRight(playerNum, coordinate) {
         if (coordinate.x == (this.GoldMatrix[this.rowNum - 1].length) - 1) {
             console.log("you can't move right ");
-        }
-        else {
+        } else {
             coordinate.x++
-            this.increaseScore(coordinate.y, coordinate.x, playerNum)
+                this.increaseScore(coordinate.y, coordinate.x, playerNum)
             if (!this.isNumber(coordinate.y, coordinate.x)) {
                 this.GoldMatrix[coordinate.y][coordinate.x - 1] = "."
                 this.GoldMatrix[coordinate.y][coordinate.x] = playerNum
@@ -104,16 +102,21 @@ class GoldRush extends Matrix {
     }
 
     movePlayer(playerNum, moveDirection) {
-        let coordinate = this.findCoordinate(playerNum)
-        if (moveDirection == "down")
-            this.moveDown(playerNum, coordinate)
-        if (moveDirection == "left")
-            this.moveLeft(playerNum, coordinate)
-        if (moveDirection == "right")
-            this.moveRight(playerNum, coordinate)
-        if (moveDirection == "up")
-            this.moveUp(playerNum, coordinate)
-    }
+            //map ifelse
+            //saveco
+            let coordinate = this.findCoordinate(playerNum)
+            if (moveDirection == "down")
+                this.moveDown(playerNum, coordinate)
+            if (moveDirection == "left")
+                this.moveLeft(playerNum, coordinate)
+            if (moveDirection == "right")
+                this.moveRight(playerNum, coordinate)
+            if (moveDirection == "up")
+                this.moveUp(playerNum, coordinate)
+        }
+        //genratecoins 
+        //class for player
+        //magic nums for player1 &2 coinconst
     coin() {
         let coinsNum = Math.floor((Math.random() * 8) + 4)
 
@@ -136,7 +139,7 @@ class GoldRush extends Matrix {
 
         this.get(x, y) == 'c' ? this.scores[playerNum] = this.scores[playerNum] + 10 : null
         this.coinsCount = this.coinsCount--
-        //this.woner()
+            //this.woner()
 
     }
 
